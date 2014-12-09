@@ -1,0 +1,7 @@
+snipx.R
+*.swp
+.RData
+.Rhistory
+*.zip
+*.md5
+UCI_HAR_Dataset
