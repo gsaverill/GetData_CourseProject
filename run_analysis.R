@@ -1,7 +1,7 @@
 ###############################################################################
 # R Script
 #
-# This script implements the required data gathering, reshaping, tidying,
+# This script implements the required data gathering, tidying,
 # and analyizing required for the course project.
 # Class: Getting and Cleaning Data, Coursera Data Science Sequence
 # 
@@ -41,14 +41,20 @@ library(dplyr)
 library(tidyr)
 
 # Read the data files and convert the data frames to data frame tbls.
-
 activityLabels <- read.table(activityLabelsFile)
 
-features <- read.table(featuresFile)
-#featureNames <- make.unique(as.character(features$V2))
-featureNames <- make.names(as.character(features$V2), unique = TRUE)
-#featureNames <- gsub("\\.\\.\\.", ".", featureNames)
-#featureNames <- gsub("\\.\\.", "", featureNames)
+# Massage the list of feature names to be unique, legal R variable names
+#   - strip out all instances of "()"
+#   - change all "-"s to "."s
+#   - change all ","s to "."s
+#   - make all duplicate names unique and clean up the remaining "("s and ")"s
+#   
+features     <- read.table(featuresFile)
+featureNames <- (as.character(features$V2))    
+featureNames <- gsub("\\()", "", featureNames) 
+featureNames <- gsub("-", ".", featureNames)   
+featureNames <- gsub(",", ".", featureNames)   
+featureNames <- make.names(featureNames, unique = TRUE)
 
 # test
 
@@ -86,11 +92,8 @@ combinedData <- select(combinedData,
                      Subject, 
                      Activity, 
                      #Test_or_Train, 
-                     contains(".mean.."), 
-                     contains(".std..")
-                     #contains("mean()"), 
-                     #contains("std()")
-                     #contains("meanFreq()")
+                     contains(".mean"), 
+                     contains(".std")
                     )
 
 # Convert the Activity column to a factor.
