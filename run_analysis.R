@@ -67,7 +67,7 @@ if (!file.exists(dataDir)) {
 #   - change all ","s to "."s
 #   - make all duplicate names unique and clean up the remaining "("s and ")"s
 # These names will be used as the descriptive variable names for the columns of
-# observation data to satisfies item (4) in the overall instructions.
+# observation data to satisfy item (4) in the overall instructions.
 
 features     <- read.table(featuresFile)
 featureNames <- as.character(features$V2)
@@ -122,6 +122,7 @@ combinedData <- select(combinedData,
                      Activity, 
                      #Test_or_Train, 
                      contains(".mean"), 
+                     -contains(".meanFreq"), 
                      contains(".std")
                     )
 
@@ -158,16 +159,16 @@ combinedData$Subject <- as.factor(combinedData$Subject)
 #    3) The activity names are descriptive (WALKING, etc.)
 #    4) The columns of observations have descriptive variable names.
 
-# Now we'll use some dplyr magic for step (5) of the overall instructions, 
-# where we'll create a second tidy data set with the average of each 
-# variable for each activity and each subject.  
+# Now we'll use some dplyr functions to carryout  step (5) of the overall 
+# instructions, where we'll create a second tidy data set with the average 
+# of each variable for each activity and each subject.  
 #
 # Group the data frame tbl by Subject and Activity.
 # Then, by subject and by activity, take the mean of the each column of 
 # observations.  Load into a new data frame tbl named "combinedAverageData".
 
 combinedAverageData <- combinedData %>% 
-                       group_by(Subject, Activity) %>% 
+                       group_by(Subject, Activity) %>%
                        summarise_each(funs(mean))
 
 # Write this second dataset to a file called "combinedAverageData.txt".
