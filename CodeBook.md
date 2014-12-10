@@ -134,7 +134,7 @@ and only the first five columns:
 10       2 STANDING       0.2757457     -0.01037199     -0.09977589
 
 There are 68 columns in this dataset, including Subject, Activity, and 66
-mean and standard deviation variables.  There are 10,299 rows.
+mean and standard deviation variables.  There are 10,299 rows of observations.
 There are 30 subjects, each representing a person, numbered 1-30.  There are
 six activities that each subject engages in: 
 	WALKING 
