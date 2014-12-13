@@ -120,19 +120,21 @@ argument to the select call in the R script.
 Next, the activity names are remapped to include descriptive names.  This is
 done by remapping the factor levels.  Here is the remapping:
 
- * "1" -> "WALKING"
- * "2" -> "WALKING_UPSTAIRS"
- * "3" -> "WALKING_DOWNSTAIRS"
- * "4" -> "WALKING_SITTING"
- * "5" -> "STANDING"
- * "6" -> "LAYING" 
+* "1" -> "WALKING"
+* "2" -> "WALKING_UPSTAIRS"
+* "3" -> "WALKING_DOWNSTAIRS"
+* "4" -> "WALKING_SITTING"
+* "5" -> "STANDING"
+* "6" -> "LAYING"
 
- At this point in the script, the dataset held in the "combinedData" data 
- frame table satisfies items 1-4 of the overall instructions.
-    1) The training and test data sets are merged and tidy.
-    2) Only the mean and standard deviation measurements are included.
-    3) The activity names are descriptive (WALKING, etc.)
-    4) The columns of observations have descriptive variable names.
+At this point in the script, the dataset held in the "combinedData" data 
+frame table satisfies items 1-4 of the overall instructions.
+<ol>
+<li>The training and test data sets are merged and tidy.
+<li>Only the mean and standard deviation measurements are included.
+<li>The activity names are descriptive (WALKING, etc.)
+<li>The columns of observations have descriptive variable names.
+</ol>
 
 The dataset, in wide form, is tidy because 1) each variable measured is in
 one column and 2) each different observation of that variable is in a
