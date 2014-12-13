@@ -67,41 +67,6 @@ UCI HAR Dataset
 	/train/y_train.txt
 ```
 
-	UCI HAR Dataset
-	/activity_labels.txt
-	/features.txt
-	/features_info.txt
-	/README.txt
-	/test
-	/test/Inertial Signals
-	/test/Inertial Signals/body_acc_x_test.txt
-	/test/Inertial Signals/body_acc_y_test.txt
-	/test/Inertial Signals/body_acc_z_test.txt
-	/test/Inertial Signals/body_gyro_x_test.txt
-	/test/Inertial Signals/body_gyro_y_test.txt
-	/test/Inertial Signals/body_gyro_z_test.txt
-	/test/Inertial Signals/total_acc_x_test.txt
-	/test/Inertial Signals/total_acc_y_test.txt
-	/test/Inertial Signals/total_acc_z_test.txt
-	/test/subject_test.txt
-	/test/X_test.txt
-	/test/y_test.txt
-	/train
-	/train/Inertial Signals
-	/train/Inertial Signals/body_acc_x_train.txt
-	/train/Inertial Signals/body_acc_y_train.txt
-	/train/Inertial Signals/body_acc_z_train.txt
-	/train/Inertial Signals/body_gyro_x_train.txt
-	/train/Inertial Signals/body_gyro_y_train.txt
-	/train/Inertial Signals/body_gyro_z_train.txt
-	/train/Inertial Signals/total_acc_x_train.txt
-	/train/Inertial Signals/total_acc_y_train.txt
-	/train/Inertial Signals/total_acc_z_train.txt
-	/train/subject_train.txt
-	/train/X_train.txt
-	/train/y_train.txt
-
-
 The data is divided into two sets, test and train.
 
 The "Inertial Signals" files, which have no column names, I choose to ignore
@@ -155,21 +120,22 @@ argument to the select call in the R script.
 Next, the activity names are remapped to include descriptive names.  This is
 done by remapping the factor levels.  Here is the remapping:
 
-* "1" -> "WALKING"
-* "2" -> "WALKING_UPSTAIRS"
-* "3" -> "WALKING_DOWNSTAIRS"
-* "4" -> "WALKING_SITTING"
-* "5" -> "STANDING"
-* "6" -> "LAYING"
+```
+"1" -> "WALKING"
+"2" -> "WALKING_UPSTAIRS"
+"3" -> "WALKING_DOWNSTAIRS"
+"4" -> "WALKING_SITTING"
+"5" -> "STANDING"
+"6" -> "LAYING"
+```
 
 At this point in the script, the dataset held in the "combinedData" data 
 frame table satisfies items 1-4 of the overall instructions.
-<ol>
-<li>The training and test data sets are merged and tidy.
-<li>Only the mean and standard deviation measurements are included.
-<li>The activity names are descriptive (WALKING, etc.)
-<li>The columns of observations have descriptive variable names.
-</ol>
+
+1. The training and test data sets are merged and tidy.
+2. Only the mean and standard deviation measurements are included.
+3. The activity names are descriptive (WALKING, etc.)
+4. The columns of observations have descriptive variable names.
 
 The dataset, in wide form, is tidy because 1) each variable measured is in
 one column and 2) each different observation of that variable is in a
@@ -178,6 +144,7 @@ different row.
 Here is what the combined data set looks like, selecting the first 10 rows
 and only the first five columns:
 
+```
    Subject Activity tBodyAcc.mean.X tBodyAcc.mean.Y tBodyAcc.mean.Z
 1        2 STANDING       0.2571778     -0.02328523     -0.01465376
 2        2 STANDING       0.2860267     -0.01316336     -0.11908252
@@ -189,6 +156,7 @@ and only the first five columns:
 8        2 STANDING       0.2746005     -0.02503513     -0.11683085
 9        2 STANDING       0.2725287     -0.02095401     -0.11447249
 10       2 STANDING       0.2757457     -0.01037199     -0.09977589
+```
 
 There are 68 columns in this dataset, including Subject, Activity, and 66
 mean and standard deviation variables.  There are 10,299 rows.
@@ -201,6 +169,7 @@ dplyr sumarise_each() function is then used to take the mean of all of the
 observed variables, summarizing each by both subject and activity.  Here are
 the first 10 rows and five columns of the second dataset:
 
+```
    Subject           Activity tBodyAcc.mean.X tBodyAcc.mean.Y tBodyAcc.mean.Z
 1        1            WALKING       0.2773308    -0.017383819      -0.1111481
 2        1   WALKING_UPSTAIRS       0.2554617    -0.023953149      -0.0973020
@@ -212,6 +181,7 @@ the first 10 rows and five columns of the second dataset:
 8        2   WALKING_UPSTAIRS       0.2471648    -0.021412113      -0.1525139
 9        2 WALKING_DOWNSTAIRS       0.2776153    -0.022661416      -0.1168129
 10       2            SITTING       0.2770874    -0.015687994      -0.1092183
+```
 
 There are 68 columns in this dataset, including Subject, Activity, and 66
 mean and standard deviation variables.  There are 180 rows, which represent
@@ -222,5 +192,5 @@ This second dataset is then written out to a file called
 
 The file can be read back into R and viewed with these commands:
 
-dataFromFile <- read.table("combinedAverageData.txt", header = TRUE)
-View(dataFromFile)
+> dataFromFile <- read.table("combinedAverageData.txt", header = TRUE)
+> View(dataFromFile)
