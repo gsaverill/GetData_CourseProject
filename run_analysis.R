@@ -159,9 +159,9 @@ combinedData$Subject <- as.factor(combinedData$Subject)
 #    3) The activity names are descriptive (WALKING, etc.)
 #    4) The columns of observations have descriptive variable names.
 
-# Now we'll use some dplyr functions to carryout  step (5) of the overall 
-# instructions, where we'll create a second tidy data set with the average 
-# of each variable for each activity and each subject.  
+# Now we'll use some chained dplyr functions to carryout step (5) of the 
+# overall instructions, where we'll create a second tidy data set with 
+# the average of each variable for each activity and each subject.  
 #
 # Group the data frame tbl by Subject and Activity.
 # Then, by subject and by activity, take the mean of the each column of 
