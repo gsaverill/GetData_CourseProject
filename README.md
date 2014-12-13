@@ -23,6 +23,7 @@ the data directory is not found in the working directory, then the script will
 download the data zip archive from the source URL and unzip it.
 
 The URL that has the data for the project is:
+
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 The name of the data directory when extracted from the zip archive is "UCI
@@ -108,8 +109,8 @@ tbl.
 
 Then, the mean and standard deviation data only is selected. This is done by
 selecting names that contain ".mean" and ".std" (prior to transformation,
-those name fragments would have been "-mean()" and "-std()").  
-Using this criteria, There are 66 mean and standard deviation variables.
+those name fragments would have been "-mean()" and "-std()").  Using this
+criteria, there are 66 mean and standard deviation variables.
 
 Note that I chose to exclude names that contain "meanFreq".  This is a
 somewhat arbitrary choice, but I assumed that the names with mean() and std()
@@ -192,5 +193,7 @@ This second dataset is then written out to a file called
 
 The file can be read back into R and viewed with these commands:
 
-> dataFromFile <- read.table("combinedAverageData.txt", header = TRUE)
-> View(dataFromFile)
+```
+dataFromFile <- read.table("combinedAverageData.txt", header = TRUE)
+View(dataFromFile)
+```
