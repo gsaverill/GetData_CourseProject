@@ -7,20 +7,6 @@ Data course in the Coursera Data Science Sequence.
 
 The overall instructions for this assignment are to create one R script 
 called run_analysis.R that does the following:
-<ol>
-<li>Merges the training and the test sets to create one data set. </li>
-<li>Extracts only the measurements on the mean and standard deviation 
-for each measurement. </li>
-<li>Uses descriptive activity names to name the activities in the data
-set.</li>
-<li>Appropriately labels the data set with descriptive variable names. </li>
-<li>From the data set in step 4, creates a second, independent tidy data 
-set with the average of each variable for each activity and each
-subject. </li>
-</ol>
-
-The overall instructions for this assignment are to create one R script 
-called run_analysis.R that does the following:
 
 1. Merges the training and the test sets to create one data set. 
 2. Extracts only the measurements on the mean and standard deviation 
@@ -31,11 +17,6 @@ set.
 5. From the data set in step 4, creates a second, independent tidy data 
 set with the average of each variable for each activity and each
 subject. 
-
-```
-lsks slsk
-slks slsks
-```
 
 The script is fully self-contained with respect to the source data in that if
 the data directory is not found in the working directory, then the script will
@@ -50,7 +31,43 @@ space, so this script renames the data directory to be: "UCI_HAR_Dataset"
 
 The directory and files found in the data set are structured like this:
 
+```
 UCI HAR Dataset
+	/activity_labels.txt
+	/features.txt
+	/features_info.txt
+	/README.txt
+	/test
+	/test/Inertial Signals
+	/test/Inertial Signals/body_acc_x_test.txt
+	/test/Inertial Signals/body_acc_y_test.txt
+	/test/Inertial Signals/body_acc_z_test.txt
+	/test/Inertial Signals/body_gyro_x_test.txt
+	/test/Inertial Signals/body_gyro_y_test.txt
+	/test/Inertial Signals/body_gyro_z_test.txt
+	/test/Inertial Signals/total_acc_x_test.txt
+	/test/Inertial Signals/total_acc_y_test.txt
+	/test/Inertial Signals/total_acc_z_test.txt
+	/test/subject_test.txt
+	/test/X_test.txt
+	/test/y_test.txt
+	/train
+	/train/Inertial Signals
+	/train/Inertial Signals/body_acc_x_train.txt
+	/train/Inertial Signals/body_acc_y_train.txt
+	/train/Inertial Signals/body_acc_z_train.txt
+	/train/Inertial Signals/body_gyro_x_train.txt
+	/train/Inertial Signals/body_gyro_y_train.txt
+	/train/Inertial Signals/body_gyro_z_train.txt
+	/train/Inertial Signals/total_acc_x_train.txt
+	/train/Inertial Signals/total_acc_y_train.txt
+	/train/Inertial Signals/total_acc_z_train.txt
+	/train/subject_train.txt
+	/train/X_train.txt
+	/train/y_train.txt
+```
+
+	UCI HAR Dataset
 	/activity_labels.txt
 	/features.txt
 	/features_info.txt
