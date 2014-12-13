@@ -5,9 +5,8 @@ The run_analysis.R script implements the required data gathering, tidying,
 and analyzing required for the course project in the Getting and Cleaning
 Data course in the Coursera Data Science Sequence.
 
-The overall instructions for this assignment are:
-
-Create one R script called run_analysis.R that does the following:
+The overall instructions for this assignment are to create one R script 
+called run_analysis.R that does the following:
 <ol>
 <li>Merges the training and the test sets to create one data set. </li>
 <li>Extracts only the measurements on the mean and standard deviation 
@@ -121,12 +120,12 @@ argument to the select call in the R script.
 Next, the activity names are remapped to include descriptive names.  This is
 done by remapping the factor levels.  Here is the remapping:
 
-   "1" -> "WALKING"
-   "2" -> "WALKING_UPSTAIRS"
-   "3" -> "WALKING_DOWNSTAIRS"
-   "4" -> "WALKING_SITTING"
-   "5" -> "STANDING"
-   "6" -> "LAYING" 
+ * "1" -> "WALKING"
+ * "2" -> "WALKING_UPSTAIRS"
+ * "3" -> "WALKING_DOWNSTAIRS"
+ * "4" -> "WALKING_SITTING"
+ * "5" -> "STANDING"
+ * "6" -> "LAYING" 
 
  At this point in the script, the dataset held in the "combinedData" data 
  frame table satisfies items 1-4 of the overall instructions.
