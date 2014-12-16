@@ -115,9 +115,10 @@ that begin with "t" are time domain observations.  The X, Y, and Z suffixes
 denote the three axial dimensions. All values are normalized and bounded
 within [-1, 1].  
 
-The units for the observations of linear acceleration are
-standard gravitational acceleration (g).  The units for the observations of
-angular velocity are radians per second.
+The units for the original observations of linear acceleration were standard
+gravitational acceleration (g).  The units for the original observations of
+angular velocity were radians per second.  However, since the data has been
+normalized, the data no longer have standard units.
 
 For more details on the feature variables, see the documents sited at the
 beginning of this codebook for the original data.
