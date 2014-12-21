@@ -65,6 +65,7 @@ if (!file.exists(dataDir)) {
 #   - strip out all instances of "()"
 #   - change all "-"s to "."s
 #   - change all ","s to "."s
+#   - substitute "Body" for "BodyBody", correcting an error in the orig. data.
 #   - make all duplicate names unique and clean up the remaining "("s and ")"s
 # These names will be used as the descriptive variable names for the columns of
 # observation data to satisfy item (4) in the overall instructions.
