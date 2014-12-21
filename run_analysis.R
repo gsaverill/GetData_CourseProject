@@ -74,6 +74,7 @@ featureNames <- as.character(features$V2)
 featureNames <- gsub("\\()", "", featureNames) 
 featureNames <- gsub("-", ".", featureNames)   
 featureNames <- gsub(",", ".", featureNames)   
+featureNames <- gsub("BodyBody", "Body", featureNames)
 featureNames <- make.names(featureNames, unique = TRUE)
 
 # Read in the observations, subjects, and activities of the "test" dataset. 
